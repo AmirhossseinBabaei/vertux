@@ -18,9 +18,9 @@ return new class extends Migration
             $table->unsignedBigInteger('wallet_id');
             $table->unsignedBigInteger('user_id');
 
-            $table->foreignId('wallet_id')->references('id')->on('wallets');
-            $table->foreignId('transaction_id')->references('id')->on('transactions');
-            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreign('wallet_id')->references('id')->on('wallets');
+            $table->foreign('transaction_id')->references('id')->on('transactions');
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->text('error_message');
 

@@ -18,9 +18,9 @@ return new class extends Migration
             $table->unsignedBigInteger('wallet_id');
             $table->unsignedBigInteger('request_id');
 
-            $table->foreignId('user_id')->references('id')->on('users');
-            $table->foreignId('wallet_id')->references('id')->on('wallets');
-            $table->foreignId('request_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('wallet_id')->references('id')->on('wallets');
+            $table->foreign('request_id')->references('id')->on('users');
 
             $table->bigInteger('amount');
             $table->bigInteger('balance_before');

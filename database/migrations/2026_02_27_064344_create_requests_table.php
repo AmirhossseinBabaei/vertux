@@ -18,9 +18,9 @@ return new class extends Migration
             $table->unsignedBigInteger('ai_service_id');
             $table->unsignedBigInteger('request_type_id');
 
-            $table->foreignId('user_id')->references('id')->on('users');
-            $table->foreignId('ai_service_id')->references('id')->on('ai_services');
-            $table->foreignId('request_type_id')->references('id')->on('request_types');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('ai_service_id')->references('id')->on('ai_services');
+            $table->foreign('request_type_id')->references('id')->on('request_types');
 
             $table->string('request_title');
 

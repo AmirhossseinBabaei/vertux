@@ -19,12 +19,12 @@ return new class extends Migration
             $table->unsignedBigInteger('transaction_id');
             $table->unsignedBigInteger('gateway_payment_id');
 
-            $table->foreignId('user_id')->references('id')->on('users');
-            $table->foreignId('wallet_id')->references('id')->on('wallets');
-            $table->foreignId('transaction_id')->references('id')->on('transactions');
-            $table->foreignId('gateway_payment_id')->references('id')->on('payment_gateways');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('wallet_id')->references('id')->on('wallets');
+            $table->foreign('transaction_id')->references('id')->on('transactions');
+            $table->foreign('gateway_payment_id')->references('id')->on('payment_gateways');
 
-            $table->decimal('amount', 0, 12);
+            $table->decimal('amount', 12, 0);
             $table->bigInteger('coin_amount');
 
             $table->enum('status', ['pending', 'paid', 'completed', 'failed', 'expired'])->default('pending');

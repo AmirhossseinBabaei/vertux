@@ -17,8 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('payment_id');
             $table->unsignedBigInteger('payment_gateway_id');
 
-            $table->foreignId('payment_id')->references('id')->on('payments');
-            $table->foreignId('payment_gateway_id')->references('id')->on('payment_gateways');
+            $table->foreign('payment_id')->references('id')->on('payments');
+            $table->foreign('payment_gateway_id')->references('id')->on('payment_gateways');
 
             $table->enum('log_type', ['error', 'request', 'verify', 'callback']);
 

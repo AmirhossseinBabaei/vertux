@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('user_id');
-            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->bigInteger('total_coin');
 

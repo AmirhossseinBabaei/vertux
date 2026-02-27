@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('provider_id');
-            $table->foreignId('provider_id')->references('id')->on('users');
+            $table->foreign('provider_id')->references('id')->on('users');
 
             $table->string('model_name');
             $table->string('display_name');
