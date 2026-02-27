@@ -22,12 +22,9 @@ return new class extends Migration
 
             $table->enum('log_type', ['error', 'request', 'verify', 'callback']);
 
-            $table->jsonb('request_data');
-            $table->jsonb('response_data');
-
             $table->integer('http_status_code');
 
-            $table->timestamps();
+            $table->timestamp('created_at');
         });
     }
 
